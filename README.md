@@ -16,8 +16,8 @@ This repository provides a step by step guide of openlane flow.
 ![starting openlane](images/1.png)
 ![run synthesis](images/2.png)
 ![run floorplan](images/3.png)
-![decoup caps](images/4.png)
-![inveretr magic](images/5.png)
+![decoup caps](images/4.png = 720x)
+![inveretr magic](images/5.png = 720x)
 
 # Conclusion
 
