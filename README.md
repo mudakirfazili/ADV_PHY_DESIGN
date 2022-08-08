@@ -13,11 +13,57 @@ This repository contains the files generated through out the workshop.
 
 This repository provides a step by step guide of openlane flow.
 ![flow](images/0.png)
-![starting openlane](images/1.png)
-![run synthesis](images/2.png)
-![run floorplan](images/3.png)
-![decoup caps](images/4.png = 250x250)
-![inveretr magic](images/5.png = 250x250)
+```
+docker
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+```
+
+![starting_openlane](images/1.png)
+
+```
+run_synthesis
+```
+
+![run_synthesis](images/2.jpg)
+
+
+```
+run_floorplan
+```
+![run_floorplan](images/3.png)
+
+![full](images/picorv32a.floorplan.def.png)
+![decoup_caps](images/4.jpg)
+
+```
+run_placement
+```
+![inveretr_magic](images/picorv32a.placement.def.png)
+```
+magic -T sky130A.tech sky130_inv.mag &
+```
+![inveretr_magic](images/5.jpg)
+
+```
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
+![extract](images/6.jpg)
+
+![netlist](images/7.jpg)
+
+```
+ngspice sky130_inv.spice 
+```
+![ngspice](images/8.jpg)
+```
+plot y vs time a
+```
+![plot](images/9.jpg)
+
 
 # Conclusion
 
